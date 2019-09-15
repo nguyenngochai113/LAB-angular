@@ -1,0 +1,29 @@
+<div class="container">
+        <div class="card" >
+                <div class="card-header"><i class="fas fa-table"> </i> Detail</div>
+                <div class="card-body">
+                    Last Name <br>
+                    {{student.LastName}} <br>
+                    First Name <br>
+                    {{student.FirstMidName}} <br>
+                    Enroll Date <br>
+                    {{student.EnrollmentDate | date:"dd/MM/yyyy"}} <br>
+                <table class="table table-bordered">
+                    <thead>
+                        <th>Course Title</th>
+                        <th>Grade</th>
+                        <th>Credits</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let enrollment of enrollment">
+                           
+                            <td>{{ course[enrollment.courseId].Title }}</td>
+                            <td> {{ enrollment.grade }}</td>
+                            <td>{{ course[enrollment.courseId].Credits }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+            </div>
+            </div>
+</div>
