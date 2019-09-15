@@ -42,6 +42,7 @@ export class Lab2Component implements OnInit {
     this.student = this.liststudents;
   
 }
+p;
  Search;
   onDeleteStudent(id) {
      let isDelete = confirm("Are you sure delete this student?")
