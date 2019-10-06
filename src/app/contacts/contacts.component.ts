@@ -91,7 +91,7 @@ export class ContactsComponent implements OnInit {
       grade:'A'},
   
   ];
-  
+
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       let id = parseInt(params.get('id'));
@@ -112,6 +112,8 @@ export class ContactsComponent implements OnInit {
     }
 
     })
+  
+
   }
 
 }

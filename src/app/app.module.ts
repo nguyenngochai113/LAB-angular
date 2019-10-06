@@ -15,13 +15,19 @@ import { Ng2SearchPipeModule} from 'ng2-search-filter';
 import {FormsModule} from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { DetailComponent } from './detail/detail.component';
-import { ContactsComponent } from './contacts/contacts.component'
+import { ContactsComponent } from './contacts/contacts.component';
+import { Lab3Component } from './lab3/lab3.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     Lab2Component,
     DetailComponent,
-    ContactsComponent
+    ContactsComponent,
+    Lab3Component,
+
+  
   ],
   imports: [
     BrowserModule,

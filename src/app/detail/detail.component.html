@@ -1,0 +1,135 @@
+<h5 style="margin-top: 20px">Bài 1.1: Tính Chu Vi, Diện Tích, HCN</h5>
+<div class="container">
+    <p></p>
+    <form action="/action_page.php">
+        <div class="form-group">
+            <label for="email">Chiều dài</label>
+            <input type="number" [(ngModel)]="detail.cd" [ngModelOptions]="{standalone: true}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="email">Chiều rộng</label>
+            <input type="number" [(ngModel)]="detail.cr" [ngModelOptions]="{standalone: true}" class="form-control">
+            <div class="form-group">
+                <label for="email">Diện tích</label>
+                <input type="number" [(ngModel)]="detail.dt" [ngModelOptions]="{standalone: true}" readonly
+                    class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">Chu vi</label>
+                <input type="number" [(ngModel)]="detail.cv" [ngModelOptions]="{standalone: true}" readonly
+                    class="form-control">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="Tinh();">Tính</button>
+    </form>
+</div>
+<!--xep loai-->
+<p></p>
+<p></p>
+<h5 style="margin-top: 40px">Bài 1.2: Xếp loại Trung Bình</h5>
+<div class="container" style="margin-top: 20px">
+    <form action="/action_page.php">
+        <div class="form-group">
+            <label for="email">Họ Và Tên</label>
+            <input type="email" [(ngModel)]="xeploai.name" [ngModelOptions]="{standalone: true}" class="form-control">
+        </div>
+    </form>
+    <form action="/action_page.php">
+        <div class="form-group">
+            <label for="email">Ngày sinh</label>
+            <input type="date" [(ngModel)]="xeploai.date" [ngModelOptions]="{standalone: true}" class="form-control">
+        </div>
+    </form>
+    <form action="/action_page.php">
+        <label for="">Giới tính</label>
+        <select type="email" name=""  [(ngModel)]="xeploai.gender" [ngModelOptions]="{standalone: true}" id="" class="form-control">
+            <option selected>choose...</option>
+            <option value="">Nam</option>
+            <option value="">Nữ</option>
+        </select>
+    </form>
+    <form action="/action_page.php">
+        <div class="form-group">
+            <label for="email">Điểm</label>
+            <input type="number" [(ngModel)]="xeploai.mark" [ngModelOptions]="{standalone: true}" class="form-control">
+        </div>
+    </form>
+    <div class="alert alert-danger">
+        {{xeploai.result}}
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="Xeploai();">Xếp loại</button>
+</div>
+<!--bai2-->
+<h5 style="margin-top: 40px">Bài 2: Nhập tính tiền thưởng tết</h5>
+<div class="container" style="margin-top: 20px">
+    <ul class="list-group">
+      <li class="list-group-item active">TÍNH THƯỞNG TẾT NGUYÊN ĐÁNG</li>
+      <li class="list-group-item">
+        <form action="/action_page.php">
+            <div class="form-group">
+                <label for="email">Họ Và Tên</label>
+                <input type="email" [(ngModel)]="employee.fullname" [ngModelOptions]="{standalone: true}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Luong</label>
+                <input type="number" [(ngModel)]="employee.salary" [ngModelOptions]="{standalone: true}" class="form-control">
+            </div>
+            <div>
+                <label for="exampleInputEmail1"> Gioi tinh:</label>
+                <input style="margin-left: 10px" type="radio"  [(ngModel)]="employee.gender" [ngModelOptions]="{standalone: true}" value="Nam">Nam
+                <input type="radio"  [(ngModel)]="employee.gender" [ngModelOptions]="{standalone: true}" value="Nu">Nu
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Do tuoi</label>
+                <div class="input-group">
+                    <select type="custom-select" [(ngModel)]="employee.rate" [ngModelOptions]="{standalone: true}" id="" class="form-control">
+                        <option *ngFor="let t of list" value="{{t.rate}}">{{t.age}}</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+      </li>
+      <li class="list-group-item">
+          {{Tinhthuong()}}
+      </li>
+    </ul>
+  </div>
+<!--bai3-->
+<h5 style="margin-top: 40px">Bài 3: Bán hàng giải khác</h5>
+<div class="container mt-5">
+    <div class="card mt-2">
+        <div class="card-header bg-light">BÁN HÀNG GIẢI KHÁT</div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Tên hàng</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Thành tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of listitems">
+                        <td>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class=" form-check-input">
+                                </label>
+                            </div>
+                            {{item.name}}
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" max="1000" min="0" [(ngModel)]="item.amount"
+                                [ngModelOptions]="{standalone: true}">
+                        </td>
+                        <td>{{item.price | currency : 'VND'}}</td>
+                        <td>{{item.amount * item.price | currency : 'VND'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer">TỔNG TIỀN: {{Tongtien()}}đ</div>
+    </div>
+
+</div>

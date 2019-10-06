@@ -25,15 +25,8 @@
                         <td>{{student.LastName}}</td>
                         <td>{{student.EnrollmentDate}}</td>
                         <td>
-                            
-                          
-                                    
-                             <a routerLink="/{{student.ID}}"><i class="fas fa-info"></i></a>
-                                    
-                              
-                                <i class="far fa-trash-alt ml-3" 
-                                        (click)="onDeleteStudent(student.ID)"></i>
-                            
+                            <a routerLink="/{{student.ID}}"><i class="fas fa-info"></i></a>
+                            <i class="far fa-trash-alt ml-3" (click)="onDeleteStudent(student.ID)"></i>
                         </td>
                     </tr>
                 </tbody>
