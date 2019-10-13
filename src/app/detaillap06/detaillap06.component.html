@@ -1,16 +1,19 @@
 <app-nav-header-lap06></app-nav-header-lap06>
 
-<div class="container">
+<div class="container" style="margin-top: 95px;">
     
-    <div class="alert alert-dark alert-dismissible fade show">
+    <div class="alert alert-dark alert-dismissible fade show">A New Hope
             <p>{{film.title}}</p>        
         </div>
+        
 <div class="row">
     <div class="col-md-3">
             <img class="card-img-top" src="https://picsum.photos/200/150/?random">
+           
     </div>
     <div class="col-md-9">
             {{film.opening_crawl}}
+            <p> It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire. During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet. Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy....</p>
     </div>
 </div>
 <button class="btn btn-primary" (click)="Onback()">Back</button>
