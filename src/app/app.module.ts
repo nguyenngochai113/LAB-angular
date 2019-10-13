@@ -31,7 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     Lap06Component,
     Detaillap06Component,
     NavHeaderLap06Component,
- 
+
 
 
 
