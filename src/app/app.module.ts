@@ -15,6 +15,7 @@ import { Lap06Component } from './lap06/lap06.component';
 import { Detaillap06Component } from './detaillap06/detaillap06.component';
 import { NavHeaderLap06Component } from './nav-header-lap06/nav-header-lap06.component';
 import { HttpClientModule } from '@angular/common/http';
+import { Lab5Component } from './lab5/lab5.component';
 
 
 
@@ -31,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     Lap06Component,
     Detaillap06Component,
     NavHeaderLap06Component,
+    Lab5Component,
 
 
 
