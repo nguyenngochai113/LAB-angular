@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { products} from "../guitar";
+
 
 @Component({
   selector: 'app-home8',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Home8Component implements OnInit {
 
-  constructor() { }
+  constructor (
 
+  ) {  }
+  products = [...products]
   ngOnInit() {
   }
+  
+  }
 
-}
+

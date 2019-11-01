@@ -1,30 +1,30 @@
-
 <div class="container">
     <div class="container">
-    <h1 style="color: orange; font-family: cursive;">My Guitar Shop</h1>
-<hr>
-<h2 style=" font-family: cursive;">You cart</h2>
-<p style="color: orange; font-family: cursive;">To remove an item your cart, change its quantity to 0</p>
-<table class="table">
-    <thead>
-        <th>Item</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Total</th>
-    </thead>
-    <tbody>
-        <tr></tr>
-        <tr>
-            <td class="text-right" colspan="3">Subtotal: </td>
-            <td></td>
-        </tr>   
-        <tr>
-            <td colspan="4" class="text-right"><button class="btn btn-primary">Update your cart</button></td>
-        </tr>
-    </tbody>
-    <p>Return to: <a routerLink="/home8">Home</a></p>
-    <p>Return to: <a routerLink="/home">Guitars</a></p>
-    <p>Proceed to: <a routerLink="/home8/checkout">Checkout</a></p>
-</table>
-</div>
+        <h1 style="color: orange; font-family: cursive;">My Guitar Shop</h1>
+        <hr>
+        <h2 style=" font-family: cursive;">You cart</h2>
+        <p style="color: orange; font-family: cursive;">To remove an item your cart, change its quantity to 0</p>
+        
+        <table class="table">
+            <thead>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </thead>
+            <tbody>
+                <tr class="cart-item" *ngFor="let item of items">
+                    <td>{{ item.productname }}</td>
+                    <td>{{ item.price | currency }}</td>
+                    
+                </tr>
+                <tr>
+                    <td colspan="4" class="text-right"><button class="btn btn-primary">Update your cart</button></td>
+                </tr>
+            </tbody>
+            <p>Return to: <a routerLink="/home8">Home</a></p>
+            <p>Return to: <a routerLink="/home">Guitars</a></p>
+            <p>Proceed to: <a routerLink="/home8/checkout">Checkout</a></p>
+        </table>
+    </div>
 </div>
